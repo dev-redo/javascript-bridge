@@ -220,8 +220,7 @@ R
 
 게임 프로세스 담당
 
-- [] 게임 시작 start
-- [] 다리 길이 세팅 setBridgeLength
+- [x] 게임 시작 start
 - [] 다리 건너기 move
 - [] 게임 재시작 여부 묻기 retry
 - [] 게임 재시작 replay
@@ -241,7 +240,7 @@ R
     - ex. [U, D, U]
   - 사용자의 position
 
-- [] 다리 생성 makeBridge
+- [x] 다리 생성 makeBridge
 - [] 게임 최초 상태 세팅 initBridgeGameStatus
 - [] 게임 결과 만들기 makeMovedResult
 - [] 게임 최종 결과 만들기 makeFinalResult
@@ -267,15 +266,15 @@ R
 
 다리 길이 유효성 검사
 
-- [] 숫자 여부
-- [] 3과 20 사이 여부
+- [x] 숫자 여부
+- [x] 3과 20 사이 여부
 
 ### 2. CommandValidator
 
 사용자로부터 칸 입력 받기 (U or D)
 
-- [] U or D를 입력받았는지 여부
+- [x] U or D를 입력받았는지 여부
 
 ### 3. ReplayValidator
 
-- [] 재시작 여부를 물을 시 R or Q 입력 여부
+- [x] 재시작 여부를 물을 시 R or Q 입력 여부

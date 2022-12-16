@@ -15,8 +15,7 @@ class BridgeGame extends GameCtrl {
     this.view.readBridgeSize(bridgeSize => {
       SizeValidator.validateList(bridgeSize);
 
-      // this.model.setCarNameList(carNameList);
-      // this.#setTrailCnt();
+      this.model.setBridge(bridgeSize);
     });
   }
 
