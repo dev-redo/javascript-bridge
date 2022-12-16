@@ -199,14 +199,14 @@ R
 
 ### 1. InputView
 
-- [] 다리 길이 입력 readBridgeSize
-- [] 이동할 칸 입력 readMoving
-- [] 게임 재시작 여부 입력 readGameCommand
+- [x] 다리 길이 입력 readBridgeSize
+- [x] 이동할 칸 입력 readMoving
+- [x] 게임 재시작 여부 입력 readGameCommand
 
 ### 2. OutputView
 
-- [] 현재까지 이동한 다리의 상태 출력 printMap
-- [] 게임의 최종 결과를 정해진 형식에 맞춰 출력 printResult
+- [x] 현재까지 이동한 다리의 상태 출력 printMap
+- [x] 게임의 최종 결과를 정해진 형식에 맞춰 출력 printResult
 
 ## BridgeMaker
 

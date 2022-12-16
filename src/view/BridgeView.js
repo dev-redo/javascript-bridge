@@ -3,7 +3,7 @@ const GameView = require('./GameView');
 class BridgeView extends GameView {
   // retryWhenError: 에러 발생 시 에러 문구 출력 후 재시작
   #retryWhenError(callerFunction, callback) {
-    return (input) => {
+    return input => {
       try {
         callback(input);
       } catch (error) {
@@ -15,7 +15,7 @@ class BridgeView extends GameView {
 
   // closeWhenError: 에러 발생 시 에러 문구 출력 후 종료
   #closeWhenError(callback) {
-    return (input) => {
+    return input => {
       try {
         callback(input);
       } catch (error) {
@@ -29,35 +29,27 @@ class BridgeView extends GameView {
     console.log(error.message);
   }
 
-  readBridgeSize() {}
-
-  inputCarNameList(callback) {
-    this.inputView.inputCarNameList(
-      this.#retryWhenError(this.inputCarNameList.bind(this), callback)
+  readBridgeSize() {
+    this.inputView.readBridgeSize(
+      this.#retryWhenError(this.readBridgeSize.bind(this), callback),
       // this.#closeWhenError(callback),
     );
   }
 
-  inputTrailCnt(callback) {
-    this.inputView.inputTrailCnt(
-      this.#retryWhenError(this.inputTrailCnt.bind(this), callback)
-    );
+  readMoving() {
+    this.inputView.readMoving(this.#retryWhenError(this.readMoving.bind(this), callback));
   }
 
-  renderGameStartCommand() {
-    this.outputView.renderGameStartCommand();
+  readGameCommand() {
+    this.inputView.readGameCommand(this.#retryWhenError(this.readGameCommand.bind(this), callback));
   }
 
-  renderGameExecutionResult() {
-    this.outputView.renderGameExecutionResult();
+  printMap(bridgeMap) {
+    this.outputView.printMap(bridgeMap);
   }
 
-  renderGameTrailResultCommand(trailResult) {
-    this.outputView.renderGameTrailResultCommand(trailResult);
-  }
-
-  renderGameWinnerCommand(gameWinner) {
-    this.outputView.renderGameWinnerCommand(gameWinner);
+  printResult(result) {
+    this.outputView.printResult(result);
   }
 }
 
