@@ -29,18 +29,18 @@ class BridgeView extends GameView {
     console.log(error.message);
   }
 
-  readBridgeSize() {
+  readBridgeSize(callback) {
     this.inputView.readBridgeSize(
       this.#retryWhenError(this.readBridgeSize.bind(this), callback),
       // this.#closeWhenError(callback),
     );
   }
 
-  readMoving() {
+  readMoving(callback) {
     this.inputView.readMoving(this.#retryWhenError(this.readMoving.bind(this), callback));
   }
 
-  readGameCommand() {
+  readGameCommand(callback) {
     this.inputView.readGameCommand(this.#retryWhenError(this.readGameCommand.bind(this), callback));
   }
 

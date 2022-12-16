@@ -47,5 +47,4 @@ module.exports = {
   VALIDATION_MESSAGE,
   REGEX,
   SPACE,
-  RESULT,
 };

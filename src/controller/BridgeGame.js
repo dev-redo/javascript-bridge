@@ -1,4 +1,5 @@
 const GameCtrl = require('./GameCtrl');
+const { ReplayValidator, CommandValidator, SizeValidator } = require('../validators');
 
 /**
  * 다리 건너기 게임을 관리하는 클래스
@@ -10,7 +11,14 @@ class BridgeGame extends GameCtrl {
   }
 
   // 다리 길이 입력받기
-  #setBridgeLength() {}
+  #setBridgeLength() {
+    this.view.readBridgeSize(bridgeSize => {
+      SizeValidator.validateList(bridgeSize);
+
+      // this.model.setCarNameList(carNameList);
+      // this.#setTrailCnt();
+    });
+  }
 
   gameProcess() {}
 
