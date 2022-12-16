@@ -262,3 +262,20 @@ R
 ## Validator
 
 유효성 검사
+
+### 1. SizeValidator
+
+다리 길이 유효성 검사
+
+- [] 숫자 여부
+- [] 3과 20 사이 여부
+
+### 2. CommandValidator
+
+사용자로부터 칸 입력 받기 (U or D)
+
+- [] U or D를 입력받았는지 여부
+
+### 3. ReplayValidator
+
+- [] 재시작 여부를 물을 시 R or Q 입력 여부

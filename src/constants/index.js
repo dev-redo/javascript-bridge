@@ -19,7 +19,8 @@ const ERROR_MESSAGE = deepFreeze({
 
 const VALIDATION_MESSAGE = deepFreeze({
   bridge_length: {
-    size: '다리 길이는 3-20 사이의 숫자를 입력해주어야 합니다.',
+    number: '다리 길이는 숫자를 입력해주셔야 합니다.',
+    range: '다리 길이는 3-20 사이의 숫자를 입력해주어야 합니다.',
   },
   move_space: {
     command: '플레이어가 이동할 칸은 대문자 U 또는 D중 하나만 입력할 수 있습니다.',
@@ -36,8 +37,8 @@ const SPACE = deepFreeze({
 
 const REGEX = {
   is_number: /^[1-9]\d*$/,
-  choose: /^[01]$/,
   move: /^[UD]$/,
+  replay: /^[RQ]$/,
 };
 
 module.exports = {

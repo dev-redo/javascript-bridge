@@ -6,7 +6,11 @@ const GameCtrl = require('./GameCtrl');
 class BridgeGame extends GameCtrl {
   start() {
     this.view.printStartMessage();
+    this.#setBridgeLength();
   }
+
+  // 다리 길이 입력받기
+  #setBridgeLength() {}
 
   gameProcess() {}
 

@@ -1,5 +1,5 @@
-const CarGameError = require('./CarGameError');
+const GameError = require('./GameError');
 
 module.exports = {
-  CarGameError,
+  GameError,
 };
