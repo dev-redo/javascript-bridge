@@ -1,7 +1,14 @@
+const { Console } = require('@woowacourse/mission-utils');
+const { GAME_MESSAGE } = require('../constants');
+
 /**
  * 사용자로부터 입력을 받는 역할을 한다.
  */
 const InputView = {
+  input(message, callback) {
+    Console.readLine(message, callback);
+  },
+
   /**
    * 다리의 길이를 입력받는다.
    */
