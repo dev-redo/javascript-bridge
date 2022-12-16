@@ -195,8 +195,69 @@ R
 
 ## BridgeView
 
+게임 입출력 담당 (InputView, OutputView 로직 위임)
+
 ### 1. InputView
+
+- [] 다리 길이 입력 readBridgeSize
+- [] 이동할 칸 입력 readMoving
+- [] 게임 재시작 여부 입력 readGameCommand
 
 ### 2. OutputView
 
-##
+- [] 현재까지 이동한 다리의 상태 출력 printMap
+- [] 게임의 최종 결과를 정해진 형식에 맞춰 출력 printResult
+
+## BridgeMaker
+
+다리 생성 모듈
+
+- 사용자로부터 입력받은 다리 길이만큼 다리 생성
+- 무작위로 0과 1을 입력받으면 이를 U, D로 변경해 다리 배열 생성
+
+## BridgeGame
+
+게임 프로세스 담당
+
+- [] 게임 시작 start
+- [] 다리 길이 세팅 setBridgeLength
+- [] 다리 건너기 move
+- [] 게임 재시작 여부 묻기 retry
+- [] 게임 재시작 replay
+- [] 게임 종료 exit
+- [] 최종 결과 출력 하기 end
+
+## BridgeModel
+
+게임 모델
+
+- 필드
+
+  - 시도 횟수 tryCount
+  - 정답 다리 answerBridge
+    - ex. [U, D, U, D]
+  - 사용자가 현재까지 건넌 다리 상태 userBridge
+    - ex. [U, D, U]
+  - 사용자의 position
+
+- [] 다리 생성 makeBridge
+- [] 게임 최초 상태 세팅 initBridgeGameStatus
+- [] 게임 결과 만들기 makeMovedResult
+- [] 게임 최종 결과 만들기 makeFinalResult
+- [] 게임 실패 여부 판별 checkIsFailed
+- [] 게임 재시작 시 상태 변경 setStatusForNextGame
+  - 1. tryCount + 1
+  - 2. userBridge = []
+- [] 유저 position 변경 setUserPosition
+  - 1. position + 1
+  - 2. userBridge.push(현재 칸)
+
+## BridgeMap
+
+- [] 현재 유저의 다리 상태 출력
+  - input: position / answerBridge / userBridge
+  - output: 현재 유저 다리 상태
+
+## Validator
+
+유효성 검사
