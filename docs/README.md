@@ -221,6 +221,8 @@ R
 게임 프로세스 담당
 
 - [x] 게임 시작 start
+- [x] 가리 길이 입력받고 다리 생성 gameProcess
+- [x] 사용자로부터 이동할 칸 입력받기 getUserCommand
 - [] 다리 건너기 move
 - [] 게임 재시작 여부 묻기 quitOrRetryByCommand
 - [] 게임 재시작 retry
@@ -241,20 +243,21 @@ R
   - 사용자의 position
 
 - [x] 다리 생성 makeBridge
-- [] 게임 최초 상태 세팅 initBridgeGameStatus
+- [x] 사용자로부터 입력받은 command를 다리에 추가하기 addCommandToUserBridge
 - [] 게임 결과 만들기 makeMovedResult
+- [] 게임 성공 여부 판별 checkIsSuccess
 - [] 게임 최종 결과 만들기 makeFinalResult
-- [] 게임 실패 여부 판별 checkIsFailed
-- [] 게임 재시작 시 상태 변경 setStatusForNextGame
+- [x] 게임 재시작 시 상태 변경 setStatusForNextGame
   - 1. tryCount + 1
-  - 2. userBridge = []
+  - 2. position = 0
+  - 3. userBridge = []
 - [] 유저 position 변경 setUserPosition
   - 1. position + 1
   - 2. userBridge.push(현재 칸)
 
 ## BridgeMap
 
-- [] 현재 유저의 다리 상태 출력
+- [] 현재 유저의 다리 상태 생성
   - input: position / answerBridge / userBridge
   - output: 현재 유저 다리 상태
 

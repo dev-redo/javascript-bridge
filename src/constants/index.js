@@ -35,6 +35,14 @@ const SPACE = deepFreeze({
   1: 'U',
 });
 
+const BRIDGE_MAP = deepFreeze({
+  up_direction: 'U',
+  down_direction: 'D',
+  success_space: ' O ',
+  empty_space: '   ',
+  fail_space: ' X ',
+});
+
 const REGEX = {
   is_number: /^[1-9]\d*$/,
   move: /^[UD]$/,
@@ -47,4 +55,5 @@ module.exports = {
   VALIDATION_MESSAGE,
   REGEX,
   SPACE,
+  BRIDGE_MAP,
 };
