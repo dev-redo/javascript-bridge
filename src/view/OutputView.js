@@ -13,6 +13,10 @@ const OutputView = {
     Console.close();
   },
 
+  printErrorMessage(error) {
+    this.output(error.message);
+  },
+
   printStartMessage() {
     this.output(GAME_MESSAGE.start);
   },

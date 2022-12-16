@@ -1,3 +1,4 @@
+const { Console, Random } = require('@woowacourse/mission-utils');
 const { BRIDGE_MAP } = require('../constants');
 
 class BridgeMap {
@@ -24,9 +25,10 @@ class BridgeMap {
 
   #initBridgeMap() {
     const directions = [BRIDGE_MAP.up_direction, BRIDGE_MAP.down_direction];
+
     this.#bridgeMap = directions.reduce((bridgeMap, currDirection) => {
       const currDirectionBridge = this.#bridge
-        .splice(0, this.#position)
+        .slice(0, this.#position)
         .map(space =>
           space === currDirection ? BRIDGE_MAP.success_space : BRIDGE_MAP.empty_space,
         );
@@ -38,13 +40,13 @@ class BridgeMap {
   #checkIfLatestCommandFailed() {
     const latestDirectionIndex = this.#position - 1;
     const latestBridgeDirection = this.#bridge[latestDirectionIndex];
-    const latestUserBridgeDirection = this.#userBridge[latestDirectionIndex];
+    const latestUserDirection = this.#userBridge[latestDirectionIndex];
 
-    this.#isPassed = latestBridgeDirection === latestUserBridgeDirection;
+    this.#isPassed = latestBridgeDirection === latestUserDirection;
     if (this.#isPassed) return;
 
     this.#bridgeMap[latestBridgeDirection][latestDirectionIndex] = BRIDGE_MAP.empty_space;
-    this.#bridgeMap[latestUserBridgeDirection][latestDirectionIndex] = BRIDGE_MAP.empty_space;
+    this.#bridgeMap[latestUserDirection][latestDirectionIndex] = BRIDGE_MAP.fail_space;
   }
 
   #convertBridgeMapToPrint() {

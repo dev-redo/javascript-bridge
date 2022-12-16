@@ -49,6 +49,11 @@ const REGEX = {
   replay: /^[RQ]$/,
 };
 
+const CHOICE = {
+  replay: 'R',
+  quit: 'Q',
+};
+
 module.exports = {
   GAME_MESSAGE,
   ERROR_MESSAGE,
@@ -56,4 +61,5 @@ module.exports = {
   REGEX,
   SPACE,
   BRIDGE_MAP,
+  CHOICE,
 };

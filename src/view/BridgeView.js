@@ -26,7 +26,7 @@ class BridgeView extends GameView {
   }
 
   #errorHandler(error) {
-    console.log(error.message);
+    this.outputView.printErrorMessage(error);
   }
 
   readBridgeSize(callback) {
@@ -42,6 +42,10 @@ class BridgeView extends GameView {
 
   readGameCommand(callback) {
     this.inputView.readGameCommand(this.#retryWhenError(this.readGameCommand.bind(this), callback));
+  }
+
+  printErrorMessage(error) {
+    this.outputView.printErrorMessage(error);
   }
 
   printStartMessage() {
