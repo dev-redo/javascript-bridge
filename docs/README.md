@@ -222,8 +222,8 @@ R
 
 - [x] 게임 시작 start
 - [] 다리 건너기 move
-- [] 게임 재시작 여부 묻기 retry
-- [] 게임 재시작 replay
+- [] 게임 재시작 여부 묻기 quitOrRetryByCommand
+- [] 게임 재시작 retry
 - [] 게임 종료 exit
 - [] 최종 결과 출력 하기 end
 
