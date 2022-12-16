@@ -44,6 +44,10 @@ class BridgeView extends GameView {
     this.inputView.readGameCommand(this.#retryWhenError(this.readGameCommand.bind(this), callback));
   }
 
+  printStartMessage() {
+    this.outputView.printStartMessage();
+  }
+
   printMap(bridgeMap) {
     this.outputView.printMap(bridgeMap);
   }
